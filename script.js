@@ -1,15 +1,24 @@
-const fs = require("fs");
-const 
-const jsonFile = require('/public/movie-night-order.json');
-const jsonData = JSON.parse(jsonFile);
+// DEPENDENCIES:
+const fs = require('fs');
+const cron = require('node-cron');
+// Read JSON file:
+const jsonFilePath = "/home/web-dead/web-dead.nekoweb.org/SCRIPTS/movie-night-order.json";
+const fileData = fs.readFileSync(jsonFilePath, 'utf8');
+const jsonData = JSON.parse(fileData);
+// ----------------------------------------
 
 
-if (jsonData.turnPointer < jsonData.nameList.length) {
-  jsonData.turnPointer += 1;
-} else if (jsonData.turnPointer >= jsonData.nameList.length) {
-  jsonData.turnPointer = 0;
-};
+function changeNamePointer() {
+    console.log("Schedule function started")
+    // If turnNumber is less than amount of names in the list, add 1 to turnNumber (which changes it to the next name)
+    if (jsonData.turnNumber < jsonData.nameList.length) {
+        jsonData.turnNumber += 1;
+        console.log("turnNumber less than nameList array length. Added 1 to turnNumber.");
+    } else if (jsonData.turnNumber >= jsonData.nameList.length) {
+        jsonData.turnNumber = 0;
+        console.log("turnNumber equal to or more than than nameList array length. Reset turnNumber to 0.");
+    };
 
-fs.writeFile(jsonFile, JSON.stringify(jsonData.turnPointer, null, 2));
-
-
+    fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
+    console.log(`JSON Updated. Turn Number: ${jsonData.turnNumber} . Name: ${jsonData.nameList[jsonData.turnNumber]} .`);
+});
