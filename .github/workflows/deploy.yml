@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 22.22.0
       - id: install_actionsCore
         run: npm install @actions/core
       - id: create_package_json
