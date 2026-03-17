@@ -1,6 +1,6 @@
 // DEPENDENCIES:
 const fs = require('fs');
-import * as core from "@actions/core";
+const core = require('@actions/core')
 // Read JSON file:
 const jsonFilePath = "public/movie-night-order.json";
 const fileData = fs.readFileSync(jsonFilePath, 'utf8');
