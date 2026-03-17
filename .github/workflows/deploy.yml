@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: setup
     outputs:
-        pointerResult: ${{ steps.run_changeNamePointer.outputs.result }}
+        pointerResult: ${{ steps.run_changeNamePointer.outputs }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -20,7 +20,7 @@ jobs:
         run: node script.mjs #runs changeNamePointer
         
       - name: Get the new pointynumber
-        run: echo "pointyboy ${{ steps.run_changeNamePointer.outputs.result }}"
+        run: echo "pointyboy ${{ steps.run_changeNamePointer.outputs.pointerResult }}"
         
    # job3:
      # name: deploy2nekoweb
