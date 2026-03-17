@@ -15,8 +15,8 @@ jobs:
           node-version: 24
       - id: create_package_json
         run: npm init -y
-      - id: install_actionsCore
-        run: npm install @actions/core
+      - id: install_actionsCoreGithub
+        run: npm install @actions/core @actions/github
       - id: run_namePointerChanger
         run: node ./script.js #runs namePointerChanger
       
