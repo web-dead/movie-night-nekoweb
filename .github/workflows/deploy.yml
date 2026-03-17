@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: setup
     outputs:
-        pointerResult: ${{ steps.run_namePointerChanger.outputs.test }}
+        pointerResult: ${{ steps.run_changeNamePointer.outputs.result }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -17,8 +17,8 @@ jobs:
         run: npm install @actions/core
       - id: create_package_json
         run: npm init -y
-      - id: run_namePointerChanger
-        run: node script.mjs #runs namePointerChanger
+      - id: run_changeNamePointer
+        run: node script.mjs #runs changeNamePointer
       
   job2:
     runs-on: ubuntu-latest
