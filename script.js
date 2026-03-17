@@ -1,5 +1,7 @@
 // DEPENDENCIES:
 const fs = require('fs');
+const core = require('@actions/core');
+const github = require('@actions/github');
 // Read JSON file:
 const jsonFilePath = "public/movie-night-order.json";
 const fileData = fs.readFileSync(jsonFilePath, 'utf8');
@@ -18,7 +20,8 @@ function changeNamePointer() {
         console.log("turnPointer equal to or more than than nameList array length. Reset turnPointer to 0.");
     };
 
-    fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
+    // fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
+    core.setOutput('pointerResult', `${jsonData.turnPointer}`);
     console.log(`JSON Updated. Turn Number: ${jsonData.turnPointer} . Name: ${jsonData.nameList[jsonData.turnPointer]} .`);
 };
 
