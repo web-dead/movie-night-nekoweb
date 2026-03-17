@@ -7,13 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     name: deploy2nekoweb
     steps:
+      - run: npm test
       - run: npm i @indiefellas/nekoweb-api
       
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: Run changeNamePointer script
-        run: move-night-nekoweb/script.js
+      
+      - name: Run JavaScript file
+        run: node ./script.js
 
       - name: deploy2nekoweb
         uses: indiefellas/deploy2nekoweb@main
