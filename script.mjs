@@ -2,7 +2,7 @@
 import fs from 'fs'; 
 import * as core from '@actions/core';
 // Read JSON file:
-const jsonFilePath = "public/movie-night-order.json";
+const jsonFilePath = "movie-night-order.json";
 const fileData = fs.readFileSync(jsonFilePath, 'utf8');
 const jsonData = JSON.parse(fileData);
 // ----------------------------------------
