@@ -13,12 +13,12 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-      - id: create_package_json
-        run: npm init -y
       - id: install_actionsCore
         run: npm install @actions/core
       - id: install_actionsGithub
         run: npm install @actions/github
+      - id: create_package_json
+        run: npm init -y
       - id: run_namePointerChanger
         run: node script.js #runs namePointerChanger
       
