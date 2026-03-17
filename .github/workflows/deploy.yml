@@ -1,18 +1,17 @@
 on: [workflow_dispatch]
 #  schedule:
 #    - cron: '0 0 * * 1'
-runs:
-  using: 'node24'
-  main: 'script.js'
   
 jobs:
   test:
     runs-on: ubuntu-latest
     name: deploy2nekoweb
     steps:
-      
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: npm init -y
       
       - name: Run JavaScript file
         run: node ./script.js
