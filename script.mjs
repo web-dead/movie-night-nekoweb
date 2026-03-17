@@ -10,11 +10,11 @@ const jsonData = JSON.parse(fileData);
 function changeNamePointer() {
     console.log("changeNamePointer function started")
     // If turnPointer is less than amount of names in the list, add 1 to turnPointer (which changes it to the next name)
-    if (jsonData.turnPointer < jsonData.nameList.length) {
-        jsonData.turnPointer += 1;
+    if (Number(jsonData.turnPointer) < jsonData.nameList.length) {
+        Number(jsonData.turnPointer) += 1;
         console.log("turnPointer less than nameList array length. Added 1 to turnPointer.");
-    } else if (jsonData.turnPointer >= jsonData.nameList.length) {
-        jsonData.turnPointer = 0;
+    } else if (umber(jsonData.turnPointer) >= jsonData.nameList.length) {
+        Number(jsonData.turnPointer) = 0;
         console.log("turnPointer equal to or more than than nameList array length. Reset turnPointer to 0.");
     };
 
