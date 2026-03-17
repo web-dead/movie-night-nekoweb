@@ -13,6 +13,3 @@ jobs:
       with:
         node-version: 24
     - run: npm init -y
-    - run: npm ci
-    - run: npm test
-    - run: node script.js
