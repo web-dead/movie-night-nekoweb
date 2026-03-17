@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
+      - id: install_begh
+        run: npm install
       - id: install_actionsCore
         run: npm install @actions/core
       - id: install_actionsGithub
