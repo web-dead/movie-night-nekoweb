@@ -1,5 +1,5 @@
 {
-  "turnNumber": 0,
+  "turnPointer": 0,
   "nameList": [
     "Alen",
     "Ed",
@@ -12,6 +12,5 @@
     "Jacob",
     "Libby",
     "James"
-  ],
-  "turnPointer": "8"
+  ]
 }
