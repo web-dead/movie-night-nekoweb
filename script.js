@@ -1,14 +1,14 @@
 // DEPENDENCIES:
-const fs = require('fs');
-const core = require('@actions/core')
+import fs from 'fs'; 
+import core from '@actions/core'; 
 // Read JSON file:
 const jsonFilePath = "public/movie-night-order.json";
 const fileData = fs.readFileSync(jsonFilePath, 'utf8');
 const jsonData = JSON.parse(fileData);
 // ----------------------------------------
 
-async function run() {
-  try {
+
+function changeNamePointer() {
     console.log("changeNamePointer function started")
     // If turnPointer is less than amount of names in the list, add 1 to turnPointer (which changes it to the next name)
     if (jsonData.turnPointer < jsonData.nameList.length) {
@@ -22,7 +22,6 @@ async function run() {
     // fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
     core.setOutput('pointerResult', `${jsonData.turnPointer}`);
     console.log(`JSON Updated. Turn Number: ${jsonData.turnPointer} . Name: ${jsonData.nameList[jsonData.turnPointer]} .`);
-  } catch (error) {
-    core.setFailed(error.message)
-  }
 };
+
+changeNamePointer();
