@@ -1,25 +1,17 @@
 name: Run script weekly 
-on:
-  schedule:
-    - cron: '0 0 * * 1'
-    
-  workflow_dispatch:
+on: [workflow_dispatch]
+  # schedule:
+    # - cron: '0 0 * * 1'
 
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-    #  - name: Run the turnOrder script
-    #    run: node your-script.js
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
+      with:
+        node-version: 24
+    - run: npm ci
+    - run: npm test
+    - run: node script.js
