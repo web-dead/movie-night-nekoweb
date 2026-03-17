@@ -19,7 +19,7 @@ function changeNamePointer() {
     };
 
     // fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
-    const result = core.setOutput('pointerResult', `${jsonData.turnPointer}`);
+    const result = core.setOutput('pointerResult', jsonData.turnPointer);
     console.log(`JSON Updated. Turn Number: ${jsonData.turnPointer} . Name: ${jsonData.nameList[jsonData.turnPointer]} .`);
     return result
 };
