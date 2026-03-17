@@ -19,6 +19,8 @@ jobs:
         run: npm install @actions/github
       - id: create_package_json
         run: npm init -y
+      - id: create_packagelock_json
+        run: npm install --package-lock-only
       - id: run_namePointerChanger
         run: node script.js #runs namePointerChanger
       
