@@ -9,17 +9,17 @@ const jsonData = JSON.parse(fileData);
 
 function changeNamePointer() {
     console.log("changeNamePointer function started")
-    // If turnNumber is less than amount of names in the list, add 1 to turnNumber (which changes it to the next name)
-    if (jsonData.turnNumber < jsonData.nameList.length) {
-        jsonData.turnNumber += 1;
-        console.log("turnNumber less than nameList array length. Added 1 to turnNumber.");
-    } else if (jsonData.turnNumber >= jsonData.nameList.length) {
-        jsonData.turnNumber = 0;
-        console.log("turnNumber equal to or more than than nameList array length. Reset turnNumber to 0.");
+    // If turnPointer is less than amount of names in the list, add 1 to turnPointer (which changes it to the next name)
+    if (jsonData.turnPointer < jsonData.nameList.length) {
+        jsonData.turnPointer += 1;
+        console.log("turnPointer less than nameList array length. Added 1 to turnPointer.");
+    } else if (jsonData.turnPointer >= jsonData.nameList.length) {
+        jsonData.turnPointer = 0;
+        console.log("turnPointer equal to or more than than nameList array length. Reset turnPointer to 0.");
     };
 
     fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
-    console.log(`JSON Updated. Turn Number: ${jsonData.turnNumber} . Name: ${jsonData.nameList[jsonData.turnNumber]} .`);
+    console.log(`JSON Updated. Turn Number: ${jsonData.turnPointer} . Name: ${jsonData.nameList[jsonData.turnPointer]} .`);
 };
 
 changeNamePointer();
