@@ -19,6 +19,12 @@ jobs:
         
       - name: Get the new pointynumber
         run: echo "${{ steps.run_changeNamePointer.outputs.pointerResult }}"
+
+      - name: Update my-file.json description
+        uses: restackio/update-json-file-action@2.1
+        with:
+          file: public/movie-night-order.json
+          fields: "{'turnPointer': '${{ steps.run_changeNamePointer.outputs.pointerResult }}'}"
         
    # job3:
      # name: deploy2nekoweb
