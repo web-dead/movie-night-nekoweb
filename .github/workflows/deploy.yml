@@ -12,8 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      # your build step here
-        
+      - name: Run changeNamePointer script
+        run: ./script.js
+
       - name: deploy2nekoweb
         uses: indiefellas/deploy2nekoweb@main
         with:
