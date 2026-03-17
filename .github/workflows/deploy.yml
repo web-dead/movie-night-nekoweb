@@ -27,11 +27,13 @@ jobs:
       - name: Get the new pointynumber
         run: echo "${{ steps.run_changeNamePointer.outputs.pointerResult }}"
 
-      - name: Update Json File
-        uses: restackio/update-json-file-action@2.1
+      - name: Bump turnpointer
+        uses: maxgfr/github-change-json@main
         with:
-          file: movie-night-order.json
-          fields: "{\"turnPointer\": \"${{ steps.run_changeNamePointer.outputs.pointerResult }}\"}"
+          key: 'turnPointer'
+          value: ${{ steps.run_changeNamePointer.outputs.pointerResult }}
+          path: movie-night-order.json
+          commit: true
           
         
    # job3:
