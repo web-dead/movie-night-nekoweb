@@ -1,6 +1,9 @@
 on: [workflow_dispatch]
 #  schedule:
 #    - cron: '0 0 * * 1'
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
   
 jobs:
   job1:
