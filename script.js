@@ -1,7 +1,7 @@
 // DEPENDENCIES:
 const fs = require('fs');
 // Read JSON file:
-const jsonFilePath = "~/web-dead/web-dead.nekoweb.org/SCRIPTS/movie-night-order.json";
+const jsonFilePath = "https://web-dead.nekoweb.org/SCRIPTS/movie-night-order.json";
 const fileData = fs.readFileSync(jsonFilePath, 'utf8');
 const jsonData = JSON.parse(fileData);
 // ----------------------------------------
