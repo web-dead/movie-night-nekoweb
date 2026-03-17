@@ -1,9 +1,11 @@
 on:
   workflow_dispatch:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
   schedule:
-  - cron: '*/30 * * * *'
+  - cron: '45 * * * *'
   # - cron: '0 0 * * 1'
 
 env:
