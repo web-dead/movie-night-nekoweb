@@ -18,7 +18,7 @@ jobs:
       - id: create_package_json
         run: npm init -y
       - id: run_namePointerChanger
-        run: node script.js #runs namePointerChanger
+        run: node script.mjs #runs namePointerChanger
       
   job2:
     runs-on: ubuntu-latest
