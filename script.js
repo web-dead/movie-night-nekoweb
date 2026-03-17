@@ -7,8 +7,8 @@ const fileData = fs.readFileSync(jsonFilePath, 'utf8');
 const jsonData = JSON.parse(fileData);
 // ----------------------------------------
 
-
-function changeNamePointer() {
+async function run() {
+  try {
     console.log("changeNamePointer function started")
     // If turnPointer is less than amount of names in the list, add 1 to turnPointer (which changes it to the next name)
     if (jsonData.turnPointer < jsonData.nameList.length) {
@@ -22,6 +22,10 @@ function changeNamePointer() {
     // fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
     core.setOutput('pointerResult', `${jsonData.turnPointer}`);
     console.log(`JSON Updated. Turn Number: ${jsonData.turnPointer} . Name: ${jsonData.nameList[jsonData.turnPointer]} .`);
+  } catch (error) {
+    core.setFailed(error.message)
+  }
+}
+function changeNamePointer() {
+    
 };
-
-changeNamePointer();
