@@ -1,7 +1,10 @@
 on: [workflow_dispatch]
 #  schedule:
 #    - cron: '0 0 * * 1'
-
+runs:
+  using: 'node24'
+  main: 'script.js'
+  
 jobs:
   test:
     runs-on: ubuntu-latest
