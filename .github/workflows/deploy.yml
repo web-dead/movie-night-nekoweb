@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     name: deploy2nekoweb
     steps:
-      - run: npm install
-      - run: npm i @indiefellas/nekoweb-api
       
       - name: Checkout
         uses: actions/checkout@v4
