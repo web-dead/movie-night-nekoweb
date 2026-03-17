@@ -8,7 +8,7 @@ const jsonData = JSON.parse(fileData);
 // ----------------------------------------
 
 
-function changeNamePointer() {
+export function changeNamePointer() {
     console.log("changeNamePointer function started")
     // If turnPointer is less than amount of names in the list, add 1 to turnPointer (which changes it to the next name)
     if (jsonData.turnPointer < jsonData.nameList.length) {
@@ -23,5 +23,3 @@ function changeNamePointer() {
     core.setOutput('pointerResult', `${jsonData.turnPointer}`);
     console.log(`JSON Updated. Turn Number: ${jsonData.turnPointer} . Name: ${jsonData.nameList[jsonData.turnPointer]} .`);
 };
-
-changeNamePointer();
