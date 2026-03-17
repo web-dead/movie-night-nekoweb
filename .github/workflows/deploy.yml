@@ -13,21 +13,14 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22.22.0
-      - id: install_actionsCore
-        run: npm install @actions/core
-      - id: create_package_json
-        run: npm init -y
+      - run: npm install @actions/core
+      - run: npm init -y
       - name: run script
         id: run_changeNamePointer
         run: node script.mjs #runs changeNamePointer
-      
-  job2:
-    runs-on: ubuntu-latest
-    needs: job1
-    steps:
-      - env:
-          OUTPUT1: ${{steps.run_changeNamePointer.outputs.pointerResult}}
-        run: echo "$OUTPUT1"
+        
+      - name: Get the new pointynumber
+        run: echo "pointyboy ${{ steps.run_changeNamePointer.outputs.result }}"
         
    # job3:
      # name: deploy2nekoweb
