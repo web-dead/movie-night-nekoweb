@@ -18,7 +18,7 @@ jobs:
         run: node script.mjs #runs changeNamePointer
         
       - name: Get the new pointynumber
-        run: echo "pointyboy ${{ steps.run_changeNamePointer.outputs.result }}"
+        run: echo "${{ steps.run_changeNamePointer.outputs.pointerResult }}"
         
    # job3:
      # name: deploy2nekoweb
