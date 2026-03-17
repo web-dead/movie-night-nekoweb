@@ -24,4 +24,4 @@ function changeNamePointer() {
     return result
 };
 
-export { changeNamePointer, result };
+export { changeNamePointer };
