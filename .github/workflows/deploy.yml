@@ -34,13 +34,3 @@ jobs:
           value: ${{ steps.run_changeNamePointer.outputs.pointerResult }}
           path: movie-night-order.json
           commit: true
-          
-        
-   # job3:
-     # name: deploy2nekoweb
-     # uses: indiefellas/deploy2nekoweb@main
-    #  with:
-       # nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
-      #  nekoweb-domain: 'web-dead.nekoweb.org'
-     #   nekoweb-username: 'web-dead'
-      #  directory: 'public'
