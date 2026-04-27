@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/web-dead/movie-night-nekoweb#readme",
   "dependencies": {
-    "@actions/core": "^3.0.0"
+    "@actions/core": "^3.0.1"
   },
   "devDependencies": {}
 }
